@@ -1,0 +1,73 @@
+/* Don't display bullets. */
+.css-treeview
+{
+    list-style: none;
+}
+
+/* Align the label and provide a pointer cursor. */
+.css-treeview label
+{
+    display: inline;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Highlight selected nodes. */
+.css-treeview label.selected
+{
+    background-color: #08C;
+    color: white;
+    padding: 2px;
+}
+
+/* Hide child nodes of an unchecked expander. */
+.css-treeview input.expander ~ ul
+{
+    display: none;
+}
+
+/* Show child nodes of a checked expander. */
+.css-treeview input.expander:checked ~ ul
+{
+    display: block;
+}
+
+/* Hide the expander checkbox. */
+.css-treeview input.expander
+{
+    position: absolute;
+    opacity: 0;
+}
+
+/* Don't change the cursor for disabled expanders. */
+.css-treeview input.expander:disabled
+{
+    cursor: default;
+}
+
+/* Remove the margin from actual checkboxes. */
+.css-treeview input.check
+{
+    margin: 0;
+}
+
+/* Before a disabled node's expander span, add a blank 20px padding */
+.css-treeview input.expander:disabled + span.expander::before
+{
+    content: '';
+    padding-right: 20px;
+}
+
+/* Before an unexpanded node's expander span, display the '>' expand icon */
+.css-treeview input.expander:enabled + span.expander::before {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgCAYAAAAbifjMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAHtJREFUSEvtlEsKwCAMRHP/S6fYUhDsfETSQnEhrvIcM5NEZsbKWSpuD9cB4mTr70EFDeBAJEBBLACD2AAEeQ+AHLEUMDslQGWBAlRxbZSd17eCa9TrFso3LtxbSN29uqEHM8WwiQjy1Bc5jWq5UhtV8R9z4KaP5mAWcgD5xILE2Y3q1wAAAABJRU5ErkJggg==');
+    background-position: 0 0;
+    content: '';
+    padding-right: 20px;
+}
+
+/* Before an expanded node's expander span, display the 'V' expanded icon */
+.css-treeview input.expander:checked:enabled + span.expander::before
+{
+    background-position: 1px 16px;
+}

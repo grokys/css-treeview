@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>css-treeview demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css-treeview.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <div class="container">
+
+      <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">css-treeview</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Go to project on Github</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+    <div class="content">
+        <h1>A CSS Treeview with Checkboxes</h1>
+    
+        <p>Here is a CSS treeview with checkboxes:</p>
+        
+        <ul class="css-treeview">
+            <li>
+                <!--The expander checkbox. This will be hidden by having its opacity set to 0. The enabled attribute 
+                controls whether the expander will be shown, set it to true if there are child elements. The checked 
+                attribute controls whether the child items are expanded. -->
+                <input type="checkbox" class="expander" checked>
+        
+                <!-- The expander image will be added to this span and placed over the expander checkbox using the 
+                ::before css rule. -->
+                <span class="expander"></span>
+        
+                <!-- Here is the checkbox. This works as normal. -->
+                <input type="checkbox" class="check">
+        
+                <!-- The tree node's label. -->
+                <label>Root Node</label>
+        
+                <!-- The child nodes. -->
+                <ul class="css-treeview">
+                    <li>
+                        <input type="checkbox" class="expander" disabled>
+                        <span class="expander"></span>
+                        <input type="checkbox" class="check">
+                        <label>Child Node 1</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="expander">
+                        <span class="expander"></span>
+                        <input type="checkbox" class="check">
+                        <label>Child Node 2</label>
+                        <ul class="css-treeview">
+                            <li>
+                                <input type="checkbox" class="expander" disabled>
+                                <span class="expander"></span>
+                                <input type="checkbox" class="check">
+                                <label>Grandchild Node</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h2>Source</h2>
+        <pre><code class="html">
+&lt;ul class=&quot;css-treeview&quot;&gt;
+    &lt;li&gt;
+        &lt;!--The expander checkbox. This will be hidden by having its opacity set to 0. The enabled attribute 
+        controls whether the expander will be shown, set it to true if there are child elements. The checked 
+        attribute controls whether the child items are expanded. --&gt;
+        &lt;input type=&quot;checkbox&quot; class=&quot;expander&quot; checked&gt;
+
+        &lt;!-- The expander image will be added to this span and placed over the expander checkbox using the 
+        ::before css rule. --&gt;
+        &lt;span class=&quot;expander&quot;&gt;&lt;/span&gt;
+
+        &lt;!-- Here is the checkbox. This works as normal. --&gt;
+        &lt;input type=&quot;checkbox&quot; class=&quot;check&quot;&gt;
+
+        &lt;!-- The tree node's label. --&gt;
+        &lt;label&gt;Root Node&lt;/label&gt;
+
+        &lt;!-- The child nodes. --&gt;
+        &lt;ul class=&quot;css-treeview&quot;&gt;
+            &lt;li&gt;
+                &lt;input type=&quot;checkbox&quot; class=&quot;expander&quot; disabled&gt;
+                &lt;span class=&quot;expander&quot;&gt;&lt;/span&gt;
+                &lt;input type=&quot;checkbox&quot; class=&quot;check&quot;&gt;
+                &lt;label&gt;Child Node 1&lt;/label&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;input type=&quot;checkbox&quot; class=&quot;expander&quot;&gt;
+                &lt;span class=&quot;expander&quot;&gt;&lt;/span&gt;
+                &lt;input type=&quot;checkbox&quot; class=&quot;check&quot;&gt;
+                &lt;label&gt;Child Node 2&lt;/label&gt;
+                &lt;ul class=&quot;css-treeview&quot;&gt;
+                    &lt;li&gt;
+                        &lt;input type=&quot;checkbox&quot; class=&quot;expander&quot; disabled&gt;
+                        &lt;span class=&quot;expander&quot;&gt;&lt;/span&gt;
+                        &lt;input type=&quot;checkbox&quot; class=&quot;check&quot;&gt;
+                        &lt;label&gt;Grandchild Node&lt;/label&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;        
+        </code></pre>
+
+    </div>
+
+    </div> <!-- /container -->
+  
+  </body>
+</html>
